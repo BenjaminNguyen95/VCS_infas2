@@ -21,7 +21,7 @@ variable "instance_count" {
 }
 variable "subnet_count" {
   description = "Number of subnet will be create"
-  default     = 3
+  default     = 4
 }
 
 variable "cidr_block" {
