@@ -3,7 +3,7 @@ module "vpc" {
   version                      = "~> 2.0"
   name                         = "global-primary-co"
   cidr                         = var.network_address_space
-  azs                          = slice(data.aws_availability_zones.azn.names, 0, var.subnet_count)
+  azs                          = slice(data.aws_availability_zones.azn.names, 0, var.subnet_count - 1)
   public_subnets               = data.template_file.public_cidrsubnet[*].rendered
   private_subnets              = data.template_file.privates_cidrsubnet[*].rendered
   enable_nat_gateway           = false
